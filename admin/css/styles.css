@@ -1,0 +1,45 @@
+.scol {
+	width: 100%;
+}
+.wp-picker-container {
+	display: inline;
+}
+.col-swrap {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+}
+.color-swrap {
+	display: flex;
+}
+.swrap {
+	display: block;
+	width: 90%;
+	margin: 5px auto;
+}
+.swrap select {
+	max-width: none;
+}
+.swrap textarea {
+	display: block;
+	width: 100%;
+	min-height: 200px;
+}
+.swrap label {
+	display: block;
+}
+.swrap .aspeed {
+	width: 60px;
+}
+#svg-render {
+	margin-top:10px;
+}
+.wp-picker-holder {
+	position: absolute;
+}
+.shortcode input {
+	width: 100%;
+}
+.welcome-panel-column .center {
+	text-align: center;
+}

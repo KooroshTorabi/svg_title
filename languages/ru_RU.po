@@ -1,0 +1,402 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SVG-title\n"
+"POT-Creation-Date: 2020-05-25 17:34+0600\n"
+"PO-Revision-Date: \n"
+"Last-Translator: VladimirGavrilovskih <emailforvg@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_attr_e;esc_html__;esc_html_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+
+#: admin/admin.php:14 admin/admin.php:15
+msgid "SVG Title"
+msgstr "SVG Заголовок"
+
+#: admin/admin.php:21
+msgid "Edit SVG Title"
+msgstr "Редактировать SVG Заголовок"
+
+#: admin/admin.php:22 admin/admin.php:242
+msgid "SVG Titles"
+msgstr "SVG Заголовки"
+
+#: admin/admin.php:29 admin/admin.php:30 admin/admin.php:247
+#: admin/edit-svg-title.php:39
+msgid "Add New"
+msgstr "Добавить новый"
+
+#: admin/admin.php:76 admin/admin.php:134
+msgid "You are not allowed to edit this item."
+msgstr "Вы не можете редактировать этот элемент."
+
+#: admin/admin.php:174
+msgid "You are not allowed to delete this item."
+msgstr "Вы не можете удалить этот элемент."
+
+#: admin/admin.php:178
+msgid "Error in deleting."
+msgstr "Ошибка при удалении."
+
+#: admin/admin.php:254
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Результат поиска для &#8220;%s&#8221;"
+
+#: admin/admin.php:269
+msgid "Search Title"
+msgstr "Искать"
+
+#: admin/admin.php:302
+msgid "Title created."
+msgstr "Заголовок создан."
+
+#: admin/admin.php:304
+msgid "Title saved."
+msgstr "Заголовок сохранен."
+
+#: admin/admin.php:306
+msgid "Title deleted."
+msgstr "Заголовок удален."
+
+#: admin/admin.php:315
+msgid "There was an error saving the title."
+msgstr "Ошибка при сохранении заголовка."
+
+#: admin/admin.php:335
+msgid "Settings"
+msgstr "Настройки"
+
+#: admin/admin.php:356
+msgid "You are not allowed to edit this title."
+msgstr "Вы не можете редактировать этот заголовок."
+
+#: admin/edit-svg-title.php:22 admin/edit-svg-title.php:115
+msgid "Save"
+msgstr "Сохранить"
+
+#: admin/edit-svg-title.php:30
+msgid "Add New Title"
+msgstr "Добавить Новый Заголовок"
+
+#: admin/edit-svg-title.php:32
+msgid "Edit Title"
+msgstr "Изменить заголовок"
+
+#: admin/edit-svg-title.php:75
+msgid "Enter title here"
+msgstr "Введите заголовок"
+
+#: admin/edit-svg-title.php:93
+msgid ""
+"Copy this shortcode and paste it into your post, page, or text widget "
+"content:"
+msgstr ""
+"Скопируйте  шорткод и используйте его на своих страницах, в постах или в "
+"текстовом виджете:"
+
+#: admin/edit-svg-title.php:104
+msgid "Status"
+msgstr "Статус"
+
+#: admin/edit-svg-title.php:106
+msgid "Published"
+msgstr "Опубликовано"
+
+#: admin/edit-svg-title.php:108
+msgid "New"
+msgstr "Новый"
+
+#: admin/edit-svg-title.php:119 admin/includes/help-tabs.php:44
+#: admin/includes/svgt-list-table.php:164
+msgid "Duplicate"
+msgstr "Дублировать"
+
+#: admin/edit-svg-title.php:127 admin/includes/svgt-list-table.php:90
+msgid "Delete"
+msgstr "Удалить"
+
+#: admin/edit-svg-title.php:127
+msgid ""
+"You are about to delete this title.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr "Вы действительно хотите удалить заголовок?"
+
+#: admin/edit-svg-title.php:142
+msgid "Do you need help?"
+msgstr "Вам нужна помощь?"
+
+#: admin/edit-svg-title.php:144
+msgid "Here are some available options for help."
+msgstr "Здесь есть дополнительная информация."
+
+#: admin/edit-svg-title.php:147 admin/includes/help-tabs.php:70
+#: admin/includes/welcome-panel.php:37
+msgid "https://fonts.google.com/"
+msgstr ""
+
+#: admin/edit-svg-title.php:148 admin/includes/help-tabs.php:70
+msgid "Google Fonts"
+msgstr ""
+
+#: admin/edit-svg-title.php:151 admin/includes/help-tabs.php:71
+msgid "/"
+msgstr ""
+
+#: admin/edit-svg-title.php:152 admin/includes/help-tabs.php:71
+msgid "SVG titles demo"
+msgstr ""
+
+#: admin/includes/editor.php:15 admin/includes/help-tabs.php:48
+msgid "Font Subset"
+msgstr "Подмножество шрифтов"
+
+#: admin/includes/editor.php:20 admin/includes/help-tabs.php:49
+msgid "Font"
+msgstr "Шрифт"
+
+#: admin/includes/editor.php:25 admin/includes/help-tabs.php:50
+msgid "Variant"
+msgstr "Вариант"
+
+#: admin/includes/editor.php:33 admin/includes/help-tabs.php:51
+msgid "Size"
+msgstr "Размер"
+
+#: admin/includes/editor.php:37 admin/includes/help-tabs.php:52
+msgid "Stroke width"
+msgstr "Толщина штриха"
+
+#: admin/includes/editor.php:41 admin/includes/help-tabs.php:53
+msgid "Animation speed"
+msgstr "Скорость анимации"
+
+#: admin/includes/editor.php:54 admin/includes/help-tabs.php:60
+msgid "Outline color"
+msgstr "Цвет обводки"
+
+#: admin/includes/editor.php:58 admin/includes/help-tabs.php:61
+msgid "Text color"
+msgstr "Цвет заливки"
+
+#: admin/includes/editor.php:64
+msgid "SVG Data"
+msgstr "SVG данные"
+
+#: admin/includes/editor.php:68
+msgid "Result"
+msgstr "Результат"
+
+#: admin/includes/help-tabs.php:16 admin/includes/help-tabs.php:28
+msgid "Overview"
+msgstr "Обзор"
+
+#: admin/includes/help-tabs.php:21
+msgid "Available Actions"
+msgstr "Доступные действия"
+
+#: admin/includes/help-tabs.php:40
+msgid ""
+"On this screen, you can manage your SVG titles. You can create an unlimited "
+"number of SVG titles. Each SVG title has a shortcode. To insert an SVG title "
+"into a post or a text widget, insert the shortcode into the target."
+msgstr ""
+"Здесь вы можете видеть все созданные SVG заголовки. Вы можете создать их "
+"неограниченное количество. Каждый SVG заголовок имеет свой шорткод. "
+"Используйте его для добавления SVG заголовка на страницу или в текстовый "
+"виджет."
+
+#: admin/includes/help-tabs.php:42
+msgid ""
+"Hovering over a row in the SVG titles list will display action links that "
+"allow you to manage your SVG titles. You can perform the following actions:"
+msgstr ""
+"При наведении на ряд в списке SVG заголовков, вы увидите возможные действия "
+"с заголовками. Вы можете:"
+
+#: admin/includes/help-tabs.php:43 admin/includes/svgt-list-table.php:146
+msgid "Edit"
+msgstr "Редактировать"
+
+#: admin/includes/help-tabs.php:43
+msgid ""
+"navigates to the editing screen for that SVG title. You can also reach that "
+"screen by clicking on the SVG title."
+msgstr ""
+"переход к экрану редактирования для этого SVG заголовка. Вы также можете "
+"добраться до этого экрана, нажав на SVG заголовок."
+
+#: admin/includes/help-tabs.php:44
+msgid ""
+"clones that SVG title. A cloned SVG title inherits all settings from the "
+"original, but has a different ID."
+msgstr ""
+"копирует SVG заголовок. Скопированный заголовок имеет все установки "
+"оригинала, но отличается идентификатором (ID)."
+
+#: admin/includes/help-tabs.php:46
+msgid ""
+"On this screen, you can edit an SVG title. SVG title settings consists of "
+"the following components:"
+msgstr ""
+"На этом экране происходит редактирование SVG заголовка. Можно изменять "
+"следующие параметры:"
+
+#: admin/includes/help-tabs.php:47 admin/includes/svgt-list-table.php:12
+msgid "Title"
+msgstr "Заголовок"
+
+#: admin/includes/help-tabs.php:47
+msgid "is the title you see in SVG."
+msgstr "это текст, который отображается в SVG."
+
+#: admin/includes/help-tabs.php:48
+msgid ""
+"is a font subset selector. Allows easier to select exact font by removing "
+"all other fonts in font selector without such subset."
+msgstr ""
+"это выбор из подмножества шрифтов. Помогает выбрать нужный шрифт, убирая из "
+"списка шрифтов ненужные."
+
+#: admin/includes/help-tabs.php:49
+msgid ""
+"is a font that will be used to render title into SVG. All fonts taken from "
+"Google Font."
+msgstr ""
+"это шрифт, использующийся при отрисовке SVG заголовка. Все шрифты взяты с "
+"сайта Google Fonts."
+
+#: admin/includes/help-tabs.php:50
+msgid ""
+"is one of possible variant of the selected font - italic, regular, bold, etc."
+msgstr ""
+"это один из возможных вариантов выбранного шрифта - обычный, курсив, жирный "
+"и т.д."
+
+#: admin/includes/help-tabs.php:51
+msgid "is letters size of the title."
+msgstr "это размер символов заголовка."
+
+#: admin/includes/help-tabs.php:52
+msgid "is stroke width in pixels."
+msgstr "это толщина обводки символов в пикселях."
+
+#: admin/includes/help-tabs.php:53
+msgid ""
+"in case you wish to add animation to the title, you can add four parameters"
+msgstr "для добавления анимации можно использовать четыре параметра"
+
+#: admin/includes/help-tabs.php:54
+msgid "pause before outline drawing animation will start"
+msgstr "пауза перед началом рисования контура"
+
+#: admin/includes/help-tabs.php:55
+msgid "duration of the outline drawing animation"
+msgstr "длительность рисования контура"
+
+#: admin/includes/help-tabs.php:56
+msgid "pause before color filling animation will start"
+msgstr "пауза перед закрашиванием символов"
+
+#: admin/includes/help-tabs.php:57
+msgid "duration of the color filling animation"
+msgstr "продолжительность анимации закрашивания символов"
+
+#: admin/includes/help-tabs.php:58
+msgid "Animation starts if SVG title is visible."
+msgstr "Анимация начинается если SVG заголвок является видимым."
+
+#: admin/includes/help-tabs.php:60
+msgid "is a color that used to paint the outline of the letters."
+msgstr "это цвет, использующийся при отрисовке символов заголовка."
+
+#: admin/includes/help-tabs.php:61
+msgid "is a color that fills letters inside."
+msgstr "это цвет для внутренней части символов."
+
+#: admin/includes/help-tabs.php:69
+msgid "For more information"
+msgstr "Для большей информации"
+
+#: admin/includes/svgt-list-table.php:13
+msgid "Shortcode"
+msgstr "Шорткод"
+
+#: admin/includes/svgt-list-table.php:14
+msgid "Author"
+msgstr "Автор"
+
+#: admin/includes/svgt-list-table.php:15
+msgid "Date"
+msgstr "Дата"
+
+#: admin/includes/svgt-list-table.php:121
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr "Изменить &#8220;%s&#8221;"
+
+#: admin/includes/svgt-list-table.php:209
+msgid "Y/m/d g:i:s A"
+msgstr ""
+
+#: admin/includes/svgt-list-table.php:216
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: admin/includes/svgt-list-table.php:218
+msgid "Y/m/d"
+msgstr ""
+
+#: admin/includes/welcome-panel.php:14
+msgid "Dismiss"
+msgstr "Закрыть"
+
+#: admin/includes/welcome-panel.php:32
+msgid "SVG title plugin"
+msgstr "SVG заголовок"
+
+#: admin/includes/welcome-panel.php:35
+#, php-format
+msgid ""
+"Allows to transform text title to SVG image using %s, adding different "
+"colors and animation of appearance."
+msgstr ""
+"Позволяет преобразовать текстовый заголвок в SVG изображение используя %s, с "
+"возможностью добавления анимации при появлении."
+
+#: admin/includes/welcome-panel.php:38
+msgid "Google fonts collection"
+msgstr "шрифты Google"
+
+#: includes/svgt-data.php:26 includes/svgt-data.php:27
+msgid "SVGT Data"
+msgstr "SVGT Дата"
+
+#: includes/svgt-data.php:88 includes/svgt-data.php:194
+msgid "Untitled"
+msgstr ""
+
+#: includes/svgt-data.php:137
+#, php-format
+msgid ""
+"<code>%1$s</code> property of a <code>Title</code> object is <strong>no "
+"longer accessible</strong>. Use <code>%2$s</code> method instead."
+msgstr ""
+"<code>%1$s</code> свойство <code>заголовка</code> <strong>более недоступно</"
+"strong>. Используйте <code>%2$s</code> вместо этого."
+
+#: settings.php:71
+#, php-format
+msgid "SVG Title %d"
+msgstr "SVG заголовок %d"

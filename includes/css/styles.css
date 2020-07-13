@@ -1,0 +1,8 @@
+.svgt-wrapper {
+	display: inline-block;
+}
+
+.svgt-wrapper svg {
+	/*max-width: none !important;*/
+	opacity: 0;
+}
