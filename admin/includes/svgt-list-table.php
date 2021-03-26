@@ -51,7 +51,7 @@ class SVGT_List_Table extends WP_List_Table {
 			}
 		}
 
-		if (empty($_REQUEST['order'])) {
+		if (isset($_REQUEST['order'])) {
 			if ('asc' == strtolower($_REQUEST['order'])) {
 				$args['order'] = 'ASC';
 			} elseif ('desc' == strtolower($_REQUEST['order'])) {

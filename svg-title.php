@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: SVG Title
-Plugin URI:
+Plugin URI: https://github.com/VladimirGavrilovskih/svg_title
 Description: Text to SVG title edit
-Author: Vladimir G
-Author URI: 
+Author: Vladimir Gavrilovskih
+Author URI:
 Text Domain: svg-title
 Domain Path: /languages/
 Version: 1.0

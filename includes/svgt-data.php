@@ -222,7 +222,7 @@ class SVGT_Data {
 		$data['after'] = '</span></p>';
 
 		$res = apply_filters('svg_data_get', $data);
-		
+
 		return sprintf($res['before'] . '%1$s' . $res['after'], $res['svg']);
 	}
 
@@ -286,7 +286,7 @@ class SVGT_Data {
 
 	public function shortcode() {
 
-		$shortcode = sprintf('[svgt id="%1$d"]', $this->id);
+		$shortcode = sprintf('[svgt id="%1$d" title="%2$.16s"]', $this->id, $this->title);
 
 		return $shortcode;
 	}

@@ -101,7 +101,7 @@ function svgt_admin_save_button($post_id) {
 				<div id="postbox-container-1" class="postbox-container">
 					<?php if (current_user_can('publish_pages', $post_id)) { ?>
 					<div id="submitdiv" class="postbox">
-						<h3><?php echo esc_html(__('Status', 'svg-title')); 
+						<h3><?php echo esc_html(__('Status', 'svg-title'));
 							if (!$post->initial()) {
 								echo ': ' . esc_html(__('Published', 'svg-title'));
 							} else {

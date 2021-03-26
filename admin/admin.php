@@ -42,9 +42,9 @@ function svgt_admin_enqueue_scripts($hook_suffix) {
 		wp_enqueue_style('svgt-admin', svgt_plugin_url('admin/css/styles.css'), array(), SVGT_VERSION, 'all');
 
 		wp_enqueue_script('svgt-admin-maker', "https://maker.js.org/target/js/browser.maker.js", array(), "0.17.0", false);
-		wp_enqueue_script('svgt-admin-bezier', "https://pomax.github.io/bezierjs/bezier.js", array(), "1.0", false);
+		wp_enqueue_script('svgt-admin-bezier', svgt_plugin_url('admin/js/bezier.js'), array(), "1.0", false);
 		wp_enqueue_script('svgt-admin-opentype', "https://cdn.jsdelivr.net/npm/opentype.js@latest/dist/opentype.min.js", array(), "1.3.3", false);
-		
+
 		wp_enqueue_script('svgt-admin', svgt_plugin_url('admin/js/scripts.js'), array('jquery', 'wp-color-picker'), SVGT_VERSION, true);
 
 	}
@@ -88,7 +88,7 @@ function svgt_load_admin() {
 
 		$args['font'] = isset($_POST['svgt-font'])
 			? $_POST['svgt-font'] : '';
-	
+
 		$args['variant'] = isset($_POST['svgt-variant'])
 			? $_POST['svgt-variant'] : '';
 

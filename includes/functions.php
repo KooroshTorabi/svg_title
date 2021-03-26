@@ -72,7 +72,7 @@ function svgt_register_post_types() {
 }
 
 add_filter('widget_title', 'filter_function_svgt', 10, 3);
-function filter_function_svgt($title, $instance, $id_base){
+function filter_function_svgt($title, $instance, $id_base = ''){
 	if (strpos($title, "[svgt") !== false) {
 		$title = str_replace("&quot;", '"', $title);
 		$title = do_shortcode($title);
@@ -81,3 +81,6 @@ function filter_function_svgt($title, $instance, $id_base){
 	return $title;
 }
 add_filter('widget_custom_html_content', 'filter_function_svgt', 10, 3);
+if (!is_admin()) {
+	add_filter('the_title', 'filter_function_svgt', 10, 3);
+}

@@ -39,12 +39,12 @@ class SVGT_Editor {
 				</div>
 				<div class="swrap">
 					<label for="aspeed"><?php echo esc_html(__('Animation speed', 'svg-title')); ?>:</label>
-					<input type="text" id="aspeed1" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[0] ? esc_attr($this->svgt->aspeed[0]) : "0"; ?>" class="aspeed"/>
-					<input type="text" id="aspeed2" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[1] ? esc_attr($this->svgt->aspeed[1]) : "0"; ?>" class="aspeed"/>
-					<input type="text" id="aspeed3" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[2] ? esc_attr($this->svgt->aspeed[2]) : "0"; ?>" class="aspeed"/>
-					<input type="text" id="aspeed4" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[3] ? esc_attr($this->svgt->aspeed[3]) : "0"; ?>" class="aspeed"/>
+					<input type="text" id="aspeed1" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[0] ? esc_attr($this->svgt->aspeed[0]) : "0"; ?>" class="aspeed" title="<?php echo esc_html(__('pause before outline drawing animation will start', 'svg-title')); ?>"/>
+					<input type="text" id="aspeed2" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[1] ? esc_attr($this->svgt->aspeed[1]) : "0"; ?>" class="aspeed" title="<?php echo esc_html(__('duration of the outline drawing animation', 'svg-title')); ?>"/>
+					<input type="text" id="aspeed3" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[2] ? esc_attr($this->svgt->aspeed[2]) : "0"; ?>" class="aspeed" title="<?php echo esc_html(__('pause before color filling animation will start', 'svg-title')); ?>"/>
+					<input type="text" id="aspeed4" name="svgt-aspeed[]" value="<?php echo $this->svgt->aspeed[3] ? esc_attr($this->svgt->aspeed[3]) : "0"; ?>" class="aspeed" title="<?php echo esc_html(__('duration of the color filling animation', 'svg-title')); ?>"/>
 				</div>
-				
+
 			</div>
 		</div>
 		<div class="clear"></div>
@@ -68,7 +68,7 @@ class SVGT_Editor {
 			<label for="result"><?php echo esc_html(__('Result', 'svg-title')); ?>:</label>
 			<div id="svg-render"></div>
 		</div>
-		
+
 	<?php }
 
 }
