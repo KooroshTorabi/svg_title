@@ -1,17 +1,16 @@
-# svg_title
-=== SVG Title ===
-Contributors: vgavrilovskih
-Tags: svg, header, title, animation
-Requires at least: 4.7
-Requires PHP: 5.6
-Tested up to: 5.7
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# SVG Title
+Contributors: vgavrilovskih  
+Tags: svg, header, title, animation  
+Requires at least: 4.7  
+Requires PHP: 5.6  
+Tested up to: 5.7  
+Stable tag: 1.0  
+License: GPLv2 or later  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
 Allows to transform text title to SVG image using Google fonts collection, adding different colors and animation of appearance.
 
-== Description ==
+## Description
 
 SVG title plugin allows to create animated SVG images from text using Google fonts. After SVG title created, it can be used in a post or a text widget by adding a shortcode.
 
@@ -34,12 +33,12 @@ Animation starts if SVG title is visible.
  * Outline color: is a color that used to paint the outline of the letters.
  * Text color: is a color that fills letters inside.
 
-== Installation ==
+## Installation
 
 Upload the Loginizer plugin to your blog, Activate it.
 
-== ChangeLog ==
+## ChangeLog
 
-= Version 1.0.0 =
+### Version 1.0.0
 
 * Initial release.
