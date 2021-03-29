@@ -3,7 +3,7 @@
 Plugin Name: SVG Title
 Plugin URI: https://github.com/VladimirGavrilovskih/svg_title
 Description: Text to SVG title edit
-Author: Vladimir Gavrilovskih
+Author: vgavrilovskih
 Author URI:
 Text Domain: svg-title
 Domain Path: /languages/
