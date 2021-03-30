@@ -118,7 +118,7 @@
 		if($(this).val() == '') $(this).val('1');
 		else checkZero($(this));
 	})
-    
+
     $('#font').change(function() {
     	getVariant(0);
     });
@@ -151,7 +151,7 @@
 	var subsets = new Array('all');
 	var linePathLgt = '100%';
     function getFonts() {
-    	var apiKey = "AIzaSyBvlkWCnZ5pOZoAUjbtPW2dK4NSxnpmgYc";
+    	var apiKey = config.MY_API_KEY;
     	$.get('https://www.googleapis.com/webfonts/v1/webfonts', {key: apiKey}, function(data) {//console.log(data);
     		fontList = data;
     		for (var i in fontList.items) {
@@ -262,7 +262,7 @@
 		svgroot.setAttribute('width', wdt);
 		svgroot.setAttribute('height', hgt);
 		svgroot.setAttribute('viewBox', (-strokew / 2) + ' ' + (-strokew / 2) + ' ' + wdt + ' ' + hgt);
-            
+
         svgroot.querySelector('g').removeAttribute('style');
 		svgroot.querySelector('g').removeAttribute('font-size');
 		svgroot.querySelector('g').removeAttribute('stroke-width');

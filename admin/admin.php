@@ -45,6 +45,7 @@ function svgt_admin_enqueue_scripts($hook_suffix) {
 		wp_enqueue_script('svgt-admin-bezier', svgt_plugin_url('admin/js/bezier.js'), array(), "1.0", false);
 		wp_enqueue_script('svgt-admin-opentype', "https://cdn.jsdelivr.net/npm/opentype.js@latest/dist/opentype.min.js", array(), "1.3.3", false);
 
+		wp_enqueue_script('svgt-apikey', svgt_plugin_url('admin/js/config.js'), array('jquery'), SVGT_VERSION, true);
 		wp_enqueue_script('svgt-admin', svgt_plugin_url('admin/js/scripts.js'), array('jquery', 'wp-color-picker'), SVGT_VERSION, true);
 
 	}
