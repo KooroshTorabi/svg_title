@@ -3,6 +3,12 @@
 }
 .wp-picker-container {
 	display: inline;
+	width: 50%;
+}
+.wp-picker-container a.wp-color-result {
+	display: block;
+	height: 20px;
+	border: 1px solid black;
 }
 .col-swrap {
 	display: flex;

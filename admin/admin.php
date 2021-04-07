@@ -248,7 +248,7 @@ function sanitize_colors($colors) {
 
 function sanitize_data($data) {
 	$res = '';
-	$res = wp_kses($data, array(
+	$res = @wp_kses($data, array(
 		'svg' => array('width' => true, 'height' => true, 'viewbox' => true, 'xmlns' => true, 'id' => true, 'data-aspeed' => true),
 		'g' => array('stroke-linecap' => true, 'fill-rule' => true, 'stroke' => true),
 		'path' => array('d' => true, 'vector-effect' => true , 'stroke-width' => true, 'stroke' => true, 'fill' => true, 'stroke-dasharray' => true, 'stroke-dashoffset' => true, 'fill-opacity' => true),
