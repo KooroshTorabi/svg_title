@@ -11,23 +11,23 @@ function svgt_admin_menu() {
 
 	$_wp_last_object_menu++;
 
-	add_menu_page(__('SVG Title', 'svg-title'),
-		__('SVG Title', 'svg-title'),
+	add_menu_page(esc_html(__('SVG Title', 'svg-title')),
+		esc_html(__('SVG Title', 'svg-title')),
 		'edit_posts', 'svgt',
 		'svgt_admin_management_page', 'dashicons-art',
 		$_wp_last_object_menu);
 
 	$edit = add_submenu_page('svgt',
-		__('Edit SVG Title', 'svg-title'),
-		__('SVG Titles', 'svg-title'),
+		esc_html(__('Edit SVG Title', 'svg-title')),
+		esc_html(__('SVG Titles', 'svg-title')),
 		'edit_posts', 'svgt',
 		'svgt_admin_management_page');
 
 	add_action('load-' . $edit, 'svgt_load_admin', 10, 0);
 
 	$addnew = add_submenu_page('svgt',
-		__('Add New', 'svg-title'),
-		__('Add New', 'svg-title'),
+		esc_html(__('Add New', 'svg-title')),
+		esc_html(__('Add New', 'svg-title')),
 		'publish_pages', 'svgt-new',
 		'svgt_admin_add_new_page');
 
@@ -71,42 +71,41 @@ function svgt_load_admin() {
 	$action = svgt_current_action();
 
 	if ($action == 'save') {
-		$id = isset($_POST['post_ID']) ? $_POST['post_ID'] : '-1';
+		$id = isset($_POST['post_ID']) ? sanitize_text_field($_POST['post_ID']) : '-1';
 		check_admin_referer('svgt-save-data_' . $id);
 
 		if (!current_user_can('publish_pages', $id)) {
-			wp_die(__('You are not allowed to edit this item.', 'svg-title'));
+			wp_die(esc_html(__('You are not allowed to edit this item.', 'svg-title')));
 		}
 
-		$args = $_REQUEST;
 		$args['id'] = $id;
 
 		$args['title'] = isset($_POST['post_title'])
-			? $_POST['post_title'] : null;
+			? sanitize_text_field($_POST['post_title']) : null;
 
 		$args['locale'] = isset($_POST['svgt-locale'])
-			? $_POST['svgt-locale'] : null;
+			? sanitize_text_field($_POST['svgt-locale']) : null;
 
 		$args['font'] = isset($_POST['svgt-font'])
-			? $_POST['svgt-font'] : '';
+			? sanitize_text_field($_POST['svgt-font']) : '';
 
 		$args['variant'] = isset($_POST['svgt-variant'])
-			? $_POST['svgt-variant'] : '';
+			? sanitize_text_field($_POST['svgt-variant']) : '';
 
 		$args['size'] = isset($_POST['svgt-size'])
-			? $_POST['svgt-size'] : '';
+			? (float)sanitize_text_field($_POST['svgt-size']) : '';
 
 		$args['aspeed'] = isset($_POST['svgt-aspeed'])
-			? $_POST['svgt-aspeed'] : array();
+			? sanitize_aspeed($_POST['svgt-aspeed']) : array();
 
 		$args['strokew'] = isset($_POST['svgt-strokew'])
-			? $_POST['svgt-strokew'] : '';
+			? (float)sanitize_text_field($_POST['svgt-strokew']) : '';
 
 		$args['colors'] = isset($_POST['svgt-colors'])
-			? $_POST['svgt-colors'] : array();
+			? sanitize_colors($_POST['svgt-colors']) : array();
 
 		$args['data'] = isset($_POST['svgt-data'])
-			? $_POST['svgt-data'] : '';
+			? sanitize_data($_POST['svgt-data']) : '';
 
 		$svgt = svgt_save_svg_data($args);
 
@@ -128,12 +127,12 @@ function svgt_load_admin() {
 	}
 
 	if ($action == 'copy') {
-		$id = empty($_POST['post_ID']) ? absint($_REQUEST['post']) : absint($_POST['post_ID']);
+		$id = empty($_POST['post_ID']) ? absint(sanitize_text_field($_REQUEST['post'])) : absint(sanitize_text_field($_POST['post_ID']));
 
 		check_admin_referer('svgt-copy-svg-data_' . $id);
 
 		if (!current_user_can('publish_pages', $id)) {
-			wp_die(__('You are not allowed to edit this item.', 'svg-title'));
+			wp_die(esc_html(__('You are not allowed to edit this item.', 'svg-title')));
 		}
 
 		$query = array();
@@ -154,9 +153,9 @@ function svgt_load_admin() {
 
 	if ($action == 'delete') {
 		if (!empty($_POST['post_ID'])) {
-			check_admin_referer('svgt-delete-svg-data_' . $_POST['post_ID']);
+			check_admin_referer('svgt-delete-svg-data_' . sanitize_text_field($_POST['post_ID']));
 		} elseif (!is_array( $_REQUEST['post'])) {
-			check_admin_referer('svgt-delete-svg-data_' . $_REQUEST['post']);
+			check_admin_referer('svgt-delete-svg-data_' . sanitize_text_field($_REQUEST['post']));
 		} else {
 			check_admin_referer('bulk-posts');
 		}
@@ -173,11 +172,11 @@ function svgt_load_admin() {
 			}
 
 			if (!current_user_can('publish_pages', $post->id())) {
-				wp_die(__('You are not allowed to delete this item.', 'svg-title'));
+				wp_die(esc_html(__('You are not allowed to delete this item.', 'svg-title')));
 			}
 
 			if (!$post->delete()) {
-				wp_die(__('Error in deleting.', 'svg-title'));
+				wp_die(esc_html(__('Error in deleting.', 'svg-title')));
 			}
 
 			$deleted += 1;
@@ -227,6 +226,40 @@ function svgt_load_admin() {
 	}
 }
 
+function sanitize_aspeed($aspeed) {
+	$res = array();
+	if (is_array($aspeed)) {
+		foreach($aspeed as $a) {
+			$res[] = (float)$a;
+		}
+	}
+	return $res;
+}
+
+function sanitize_colors($colors) {
+	$res = array();
+	if (is_array($colors)) {
+		foreach($colors as $c) {
+			$res[] = sanitize_hex_color($c);
+		}
+	}
+	return $res;
+}
+
+function sanitize_data($data) {
+	$res = '';
+	$res = wp_kses($data, array(
+		'svg' => array('width' => true, 'height' => true, 'viewbox' => true, 'xmlns' => true, 'id' => true, 'data-aspeed' => true),
+		'g' => array('stroke-linecap' => true, 'fill-rule' => true, 'stroke' => true),
+		'path' => array('d' => true, 'vector-effect' => true , 'stroke-width' => true, 'stroke' => true, 'fill' => true, 'stroke-dasharray' => true, 'stroke-dashoffset' => true, 'fill-opacity' => true),
+		'animate' => array('id' => true, 'attributename' => true, 'begin' => true, 'values' => true, 'dur' => true, 'repeatcount' => true, 'fill' =>true, 'calcmode' => true),
+		'title' => true,
+		'desc' => true
+		)
+	);
+	return $res;
+}
+
 function svgt_admin_management_page() {
 	if ($post = svgt_get_current_title()) {
 		$post_id = $post->initial() ? -1 : $post->id();
@@ -253,8 +286,8 @@ function svgt_admin_management_page() {
 
 	if (!empty($_REQUEST['s'])) {
 		echo sprintf('<span class="subtitle">'
-			. __('Search results for &#8220;%s&#8221;', 'svg-title')
-			. '</span>', esc_html($_REQUEST['s'])
+			. esc_html(__('Search results for &#8220;%s&#8221;', 'svg-title'))
+			. '</span>', sanitize_text_field($_REQUEST['s'])
 		);
 	}
 ?>
@@ -268,7 +301,7 @@ function svgt_admin_management_page() {
 
 <form method="get" action="">
 	<input type="hidden" name="page" value="<?php echo esc_attr($_REQUEST['page']); ?>" />
-	<?php $list_table->search_box(__('Search Title', 'svg-title'), 'svgt-search'); ?>
+	<?php $list_table->search_box(esc_html(__('Search Title', 'svg-title')), 'svgt-search'); ?>
 	<?php $list_table->display(); ?>
 </form>
 
@@ -301,11 +334,11 @@ function svgt_admin_updated_message($page, $action, $object) {
 	}
 
 	if ($_REQUEST['message'] == 'created') {
-		$updated_message = __("Title created.", 'svg-title');
+		$updated_message = esc_html(__("Title created.", 'svg-title'));
 	} elseif ($_REQUEST['message'] == 'saved') {
-		$updated_message = __("Title saved.", 'svg-title');
+		$updated_message = esc_html(__("Title saved.", 'svg-title'));
 	} elseif ($_REQUEST['message'] == 'deleted') {
-		$updated_message = __("Title deleted.", 'svg-title');
+		$updated_message = esc_html(__("Title deleted.", 'svg-title'));
 	}
 
 	if (!empty($updated_message)) {
@@ -314,7 +347,7 @@ function svgt_admin_updated_message($page, $action, $object) {
 	}
 
 	if ($_REQUEST['message'] == 'failed') {
-		$updated_message = __("There was an error saving the title.", 'svg-title');
+		$updated_message = esc_html(__("There was an error saving the title.", 'svg-title'));
 
 		echo sprintf('<div id="message" class="notice notice-error is-dismissible"><p>%s</p></div>', esc_html($updated_message));
 		return;
@@ -355,7 +388,7 @@ function svgt_not_allowed_to_edit($page, $action, $object) {
 		return;
 	}
 
-	$message = __("You are not allowed to edit this title.", 'svg-title');
+	$message = esc_html(__("You are not allowed to edit this title.", 'svg-title'));
 
 	echo sprintf('<div class="notice notice-warning"><p>%s</p></div>', esc_html($message));
 }

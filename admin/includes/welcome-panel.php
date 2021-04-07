@@ -34,8 +34,9 @@ function svgt_welcome_panel() {
 	echo sprintf(
 		esc_html(__('Allows to transform text title to SVG image using %s, adding different colors and animation of appearance.', 'svg-title')),
 		svgt_link(
-			__('https://fonts.google.com/', 'svg-title', array("target" => "_blank")),
-			__('Google fonts collection', 'svg-title', array("target" => "_blank"))
+			__('https://fonts.google.com/', 'svg-title'),
+			__('Google fonts collection', 'svg-title'),
+			array("target" => "_blank")
 		)
 	);
 				?></p>

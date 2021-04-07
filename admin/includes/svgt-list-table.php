@@ -9,10 +9,10 @@ class SVGT_List_Table extends WP_List_Table {
 	public static function define_columns() {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
-			'title' => __('Title', 'svg-title'),
-			'shortcode' => __('Shortcode', 'svg-title'),
-			'author' => __('Author', 'svg-title'),
-			'date' => __('Date', 'svg-title'),
+			'title' => esc_html(__('Title', 'svg-title')),
+			'shortcode' => esc_html(__('Shortcode', 'svg-title')),
+			'author' => esc_html(__('Author', 'svg-title')),
+			'date' => esc_html(__('Date', 'svg-title')),
 		);
 
 		return $columns;
@@ -38,7 +38,7 @@ class SVGT_List_Table extends WP_List_Table {
 		);
 
 		if (!empty($_REQUEST['s'])) {
-			$args['s'] = $_REQUEST['s'];
+			$args['s'] = sanitize_text_field($_REQUEST['s']);
 		}
 
 		if (!empty($_REQUEST['orderby'])) {
@@ -87,7 +87,7 @@ class SVGT_List_Table extends WP_List_Table {
 
 	protected function get_bulk_actions() {
 		$actions = array(
-			'delete' => __('Delete', 'svg-title'),
+			'delete' => esc_html(__('Delete', 'svg-title')),
 		);
 
 		return $actions;

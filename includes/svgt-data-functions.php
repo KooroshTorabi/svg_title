@@ -117,8 +117,6 @@ function svgt_save_svg_data($args = '', $context = 'save') {
 
 	$svgt->set_properties($properties);
 
-	//do_action('svgt_save_svg_data', $svgt, $args, $context);
-
 	if ($context == 'save') {
 		$svgt->save();
 	}
