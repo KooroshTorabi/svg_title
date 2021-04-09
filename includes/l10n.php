@@ -24,7 +24,12 @@ function svgt_load_textdomain() {
 
 		$mofile = $locale . '.mo';
 		$path = WP_PLUGIN_DIR . '/' . $domain . '/languages';
-
+		if (!is_dir($path)) {
+			$path = WP_PLUGIN_DIR . '/svg_title/languages';
+			if (!is_dir($path)) {
+				$path = WP_PLUGIN_DIR . '/svg_title-master/languages';
+			}
+		}
 		if ($loaded = load_textdomain($domain, $path . '/'. $mofile)) {
 			return $loaded;
 		} else {
