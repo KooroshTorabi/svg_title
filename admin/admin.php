@@ -160,9 +160,9 @@ function svgt_load_admin() {
 			check_admin_referer('bulk-posts');
 		}
 
-		$posts = empty($_POST['post_ID']) ? (array) $_REQUEST['post'] : (array) $_POST['post_ID'];
-
 		$deleted = 0;
+
+		$posts = empty($_POST['post_ID']) ? array_map('sanitize_text_field', (array)$_REQUEST['post']) : (array)sanitize_text_field($_POST['post_ID']);
 
 		foreach ($posts as $post) {
 			$post = SVGT_Data::get_instance($post);
@@ -198,10 +198,10 @@ function svgt_load_admin() {
 
 	if ($plugin_page == 'svgt-new') {
 		$post = SVGT_Data::get_template(array(
-			'locale' => isset($_GET['locale']) ? $_GET['locale'] : null,
+			'locale' => isset($_GET['locale']) ? sanitize_text_field($_GET['locale']) : null,
 		));
 	} elseif (!empty($_GET['post'])) {
-		$post = SVGT_Data::get_instance($_GET['post']);
+		$post = SVGT_Data::get_instance(sanitize_text_field($_GET['post']));
 	}
 
 	$current_screen = get_current_screen();

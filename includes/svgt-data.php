@@ -80,7 +80,7 @@ class SVGT_Data {
 
 		if ($locale) {
 			$mo_orig = $l10n['svg-title'];
-			svgt_load_textdomain($locale);
+			svgt_load_textdomain();
 		}
 
 		self::$current = $svgt = new self;
