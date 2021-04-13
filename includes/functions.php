@@ -73,11 +73,17 @@ function svgt_register_post_types() {
 
 add_filter('widget_title', 'filter_function_svgt', 10, 3);
 function filter_function_svgt($title, $instance, $id_base = ''){
-	if (strpos($title, "[svgt") !== false) {
-		$title = str_replace("&quot;", '"', $title);
-		$title = do_shortcode($title);
-	}
+	if (is_singular() && in_the_loop()) {
+		if (strpos($title, "[svgt") !== false) {
+			$title = str_replace("&quot;", '"', $title);
+			$title = do_shortcode($title);
 
+		}
+	} else {
+		$start = strpos($title, 'title="') + 7;
+		$end = strpos($title, '"]');
+		$title = substr($title, $start, $end - $start);
+	}
 	return $title;
 }
 add_filter('widget_custom_html_content', 'filter_function_svgt', 10, 3);
