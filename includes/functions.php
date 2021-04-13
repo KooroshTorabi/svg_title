@@ -73,7 +73,7 @@ function svgt_register_post_types() {
 
 add_filter('widget_title', 'filter_function_svgt', 10, 3);
 function filter_function_svgt($title, $instance, $id_base = ''){
-	if (is_singular() && in_the_loop()) {
+	if ((is_singular() && in_the_loop()) || is_array($instance)) {
 		if (strpos($title, "[svgt") !== false) {
 			$title = str_replace("&quot;", '"', $title);
 			$title = do_shortcode($title);
